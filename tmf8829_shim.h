@@ -26,6 +26,7 @@ extern "C"
 {
 #endif
 
+
 // ---------------------------------------------- defines -----------------------------------------
 #define DATA_BUFFER_SIZE                      2048   /**< buffer size for transfer/receive buffer  */
 #define ARDUINO_MAX_I2C_TRANSFER              32    /**< Arduino Uno can only handle up to 32 bytes in a single i2c tx/rx */

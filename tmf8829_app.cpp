@@ -6,7 +6,7 @@
 *                                                                                                 *
 **************************************************************************************************/
 
-/* tmf8829 arduino uno sample program */
+/* tmf8829 arduino uno sample program modified for downlighter demo example*/
 
 // ---------------------------------------------- includes ----------------------------------------
 #include <WiFi.h>
@@ -92,6 +92,7 @@ const int measCfg[NR_OF_MEAS_CFGS] =
 };
 
 const int outputPin = D7;        // D7 for LED / PWM output
+const int greenLed = D8;
 
 const uint8_t INNERRING_1[] = {28, 29, 36, 37};
 const uint8_t MIDDLERING_1[] = {10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 26, 27, 30, 31, 34, 35, 38, 39, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 54, 55};
@@ -1191,6 +1192,9 @@ void setupFn( uint8_t logLevelIdx, uint32_t baudrate, uint32_t i2cClockSpeedInHz
       tmf8829ZoneMask[i] = 0;
     }
   }
+  pinMode(greenLed, OUTPUT);
+  digitalWrite(greenLed, HIGH);
+
   measure( );                                                     // start measurements
 }
 
